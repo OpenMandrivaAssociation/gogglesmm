@@ -39,6 +39,6 @@ song. It supports gapless playback and features easy tag editing.
 %doc README ChangeLog AUTHORS COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
-%{_iconsdir}/hicolor/48x48/apps%{name}.png
+%{_iconsdir}/hicolor/48x48/apps/%{name}.png
 %{_mandir}/man1/%{name}.1*
 
