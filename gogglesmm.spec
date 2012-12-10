@@ -1,6 +1,6 @@
 Summary:	Goggles Music Manager
 Name:		gogglesmm
-Version:	0.12.0
+Version:	0.12.6
 Release:	1
 Group:		Sound
 License:	GPLv3
@@ -8,7 +8,7 @@ URL:		http://code.google.com/p/gogglesmm/
 Source0:	http://code.google.com/p/gogglesmm/%{name}-%{version}.tar.xz
 
 BuildRequires:	libgcrypt-devel
-BuildRequires:	libxine-devel
+BuildRequires:	pkgconfig(libxine)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(fox)
@@ -39,6 +39,13 @@ song. It supports gapless playback and features easy tag editing.
 %doc README ChangeLog AUTHORS COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
-%{_iconsdir}/hicolor/48x48/apps/%{name}.png
+%{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/%{name}.1*
+
+
+
+%changelog
+* Wed May 30 2012 Matthew Dawkins <mattydaw@mandriva.org> 0.12.0-1
++ Revision: 801374
+- imported package gogglesmm
 
