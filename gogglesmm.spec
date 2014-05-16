@@ -83,6 +83,7 @@ export LDFLAGS="$LDFLAGS -ldl -Wl,--as-needed"
 export CXXFLAGS="%{optflags}"
 export CFLAGS="%{optflags}"
 
+# if build for arm define here the arch
 %ifarch x86_64
 %configure2_5x --lib64
 %else
