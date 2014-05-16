@@ -25,6 +25,7 @@ BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(glproto)
 BuildRequires:	pkgconfig(opus)
+BuildRequires:	pkgconfig(opusfile)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:  mad-devel
 BuildRequires:  pkgconfig(sm)
