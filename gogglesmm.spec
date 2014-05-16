@@ -84,7 +84,7 @@ song. It supports gapless playback and features easy tag editing.
 %patch0 -p0
 
 %build
-export LDFLAGS="$LDFLAGS -ldl -Wl,--as-needed"
+export LDFLAGS="$LDFLAGS -ldl -lopusfile -Wl ,--as-needed"
 export CXXFLAGS="%{optflags}"
 export CFLAGS="%{optflags}"
 
