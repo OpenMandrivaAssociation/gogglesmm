@@ -6,6 +6,9 @@ Group:		Sound
 License:	GPLv3
 URL:		http://gogglesmm.github.io/
 Source0:        https://github.com/gogglesmm/gogglesmm/archive/%{name}-0.13.1.tar.gz
+Source100:	%{name}.rpmlintrc
+
+Patch0:		gogglesmm-taglib.patch
 
 BuildRequires:	libgcrypt-devel
 BuildRequires:	pkgconfig(libxine)
@@ -14,7 +17,7 @@ BuildRequires:	pkgconfig(expat)
 BuildRequires:	pkgconfig(fox17)  >= 1.7.46
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(sqlite3)
-BuildRequires:	pkgconfig(taglib) >= 1.9.0
+BuildRequires:	pkgconfig(taglib) 
 BuildRequires:	pkgconfig(taglib-extras)
 BuildRequires:	pkgconfig(glew)
 BuildRequires:	libgap-devel
@@ -77,13 +80,13 @@ song. It supports gapless playback and features easy tag editing.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 export LDFLAGS="$LDFLAGS -ldl -Wl,--as-needed"
 export CXXFLAGS="%{optflags}"
 export CFLAGS="%{optflags}"
 
-# if build for arm define here the arch
 %ifarch x86_64
 %configure2_5x --lib64
 %else
@@ -104,5 +107,12 @@ export CFLAGS="%{optflags}"
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/%{name}.1*
 
+
+
+
+%changelog
+* Sat May 10 2014 SymbianFlo <symbianflo@mandrivausers.ro> 0.13.1-1
++ Revision: 991b40a
+- Updated gogglesmm.spec
 
 
