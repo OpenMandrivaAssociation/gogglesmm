@@ -24,8 +24,9 @@ BuildRequires:	libgap-devel
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(glproto)
-BuildRequires:	pkgconfig(opus)
-BuildRequires:	pkgconfig(opusfile)
+# TODO: uncomment when we have  1.9.1 taglib available
+# BuildRequires:	pkgconfig(opus)
+# BuildRequires:	pkgconfig(opusfile)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:  mad-devel
 BuildRequires:  pkgconfig(sm)
@@ -84,14 +85,15 @@ song. It supports gapless playback and features easy tag editing.
 %patch0 -p0
 
 %build
-export LDFLAGS="$LDFLAGS -ldl -lopusfile"
+export LDFLAGS="$LDFLAGS -ldl -Wl,--as-needed"
 export CXXFLAGS="%{optflags}"
 export CFLAGS="%{optflags}"
 
+# due the old taglib no opus...
 %ifarch x86_64
-%configure2_5x --lib64
+%configure2_5x --lib64 --without-opus
 %else
-%configure2_5x 
+%configure2_5x --without-opus
 %endif
 
 %make
@@ -109,11 +111,5 @@ export CFLAGS="%{optflags}"
 %{_mandir}/man1/%{name}.1*
 
 
-
-
-%changelog
-* Sat May 10 2014 SymbianFlo <symbianflo@mandrivausers.ro> 0.13.1-1
-+ Revision: 991b40a
-- Updated gogglesmm.spec
 
 
