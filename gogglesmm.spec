@@ -85,6 +85,7 @@ song. It supports gapless playback and features easy tag editing.
 # TODO: drop when we have  1.9.1 taglib available
 %patch0 -p0
 perl -pi -e "s|#include <opusfile.h>||" src/GMTag.cpp
+perl -pi -e "s|#include <tdebuglistener.h>||" src/GMTag.cpp
 #
 
 %build
