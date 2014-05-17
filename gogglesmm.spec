@@ -7,7 +7,7 @@ License:	GPLv3
 URL:		http://gogglesmm.github.io/
 Source0:        https://github.com/gogglesmm/gogglesmm/archive/%{name}-0.13.1.tar.gz
 Source100:	%{name}.rpmlintrc
-
+# TODO: drop when we have  1.9.1 taglib available
 Patch0:		gogglesmm-taglib.patch
 
 BuildRequires:	libgcrypt-devel
@@ -24,9 +24,8 @@ BuildRequires:	libgap-devel
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(glproto)
-# TODO: uncomment when we have  1.9.1 taglib available
-# BuildRequires:	pkgconfig(opus)
-# BuildRequires:	pkgconfig(opusfile)
+BuildRequires:	pkgconfig(opus)
+BuildRequires:	pkgconfig(opusfile)
 BuildRequires:	pkgconfig(flac)
 BuildRequires:  mad-devel
 BuildRequires:  pkgconfig(sm)
@@ -82,18 +81,22 @@ song. It supports gapless playback and features easy tag editing.
 
 %prep
 %setup -q
+
+# TODO: drop when we have  1.9.1 taglib available
 %patch0 -p0
+perl -pi -e "s|#include <opusfile.h>||" src/GMTag.cpp
+#
 
 %build
 export LDFLAGS="$LDFLAGS -ldl -Wl,--as-needed"
 export CXXFLAGS="%{optflags}"
 export CFLAGS="%{optflags}"
 
-# due the old taglib no opus...
+
 %ifarch x86_64
-%configure2_5x --lib64 --without-opus
+%configure2_5x --lib64 
 %else
-%configure2_5x --without-opus
+%configure2_5x 
 %endif
 
 %make
