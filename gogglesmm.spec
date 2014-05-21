@@ -1,7 +1,7 @@
 Summary:	Goggles Music Manager
 Name:		gogglesmm
 Version:	0.13.1
-Release:	1
+Release:	2
 Group:		Sound
 License:	GPLv3
 URL:		http://gogglesmm.github.io/
@@ -30,6 +30,11 @@ BuildRequires:  libfaad2-devel
 BuildRequires:  pkgconfig(ice)
 BuildRequires:  pkgconfig(smbclient)
 
+Requires:       xine-pulse
+Requires:       xine-plugins
+Suggests:       xine-flac
+Suggests:       xine-aa
+Suggests:       xine-caca
 
 Suggests:   gogglesmm-utils = %{EVRD}
 
