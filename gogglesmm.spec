@@ -1,7 +1,7 @@
 Summary:	Goggles Music Manager
 Name:		gogglesmm
 Version:	0.12.6
-Release:	1
+Release:	6
 Group:		Sound
 License:	GPLv3
 URL:		http://code.google.com/p/gogglesmm/
@@ -16,6 +16,27 @@ BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	pkgconfig(taglib-extras)
+BuildRequires:	pkgconfig(glew)
+BuildRequires:	libgap-devel
+BuildRequires:	pkgconfig(libpulse)
+BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(glproto)
+BuildRequires:	pkgconfig(opus)
+BuildRequires:	pkgconfig(opusfile)
+BuildRequires:	pkgconfig(flac)
+BuildRequires:  mad-devel
+BuildRequires:  pkgconfig(sm)
+BuildRequires:  pkgconfig(liblircclient0)
+BuildRequires:  libfaad2-devel
+BuildRequires:  pkgconfig(ice)
+BuildRequires:  pkgconfig(smbclient)
+Requires:       xine-pulse
+Requires:       xine-plugins
+Suggests:       xine-flac
+Suggests:       xine-aa
+Suggests:       xine-caca
+
+
 
 %description
 Goggles Music Manager is a music collection manager and player that 
@@ -43,9 +64,4 @@ song. It supports gapless playback and features easy tag editing.
 %{_mandir}/man1/%{name}.1*
 
 
-
-%changelog
-* Wed May 30 2012 Matthew Dawkins <mattydaw@mandriva.org> 0.12.0-1
-+ Revision: 801374
-- imported package gogglesmm
 
