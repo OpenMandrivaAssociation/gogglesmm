@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   gogglesmm-0.12.6.tar.xz: f7be45c752d9904b192ab1273702b45e1065bb9f
+sources:
+  gogglesmm-1.0.7.tar.gz: 966b00ba789127074bd474d88889f2822ddcd351

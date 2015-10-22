@@ -1,17 +1,20 @@
+%define _disable_lto 1
+%define _disable_ld_no_undefined 1
+
 Summary:	Goggles Music Manager
 Name:		gogglesmm
-Version:	0.12.6
-Release:	6
+Version:	1.0.7
+Release:	1
 Group:		Sound
 License:	GPLv3
-URL:		http://code.google.com/p/gogglesmm/
-Source0:	http://code.google.com/p/gogglesmm/%{name}-%{version}.tar.xz
+URL:		https://gogglesmm.github.io/
+Source0:	http://code.google.com/p/gogglesmm/%{name}-%{version}.tar.gz
 
 BuildRequires:	libgcrypt-devel
 BuildRequires:	pkgconfig(libxine)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(expat)
-BuildRequires:	pkgconfig(fox)
+BuildRequires:	pkgconfig(fox17)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(taglib)
@@ -27,7 +30,7 @@ BuildRequires:	pkgconfig(flac)
 BuildRequires:  mad-devel
 BuildRequires:  pkgconfig(sm)
 BuildRequires:  pkgconfig(liblircclient0)
-BuildRequires:  libfaad2-devel
+BuildRequires:  faad2-devel
 BuildRequires:  pkgconfig(ice)
 BuildRequires:  pkgconfig(smbclient)
 Requires:       xine-pulse
@@ -60,8 +63,9 @@ song. It supports gapless playback and features easy tag editing.
 %doc README ChangeLog AUTHORS COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
+%{_datadir}/appdata/%{name}.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{_mandir}/man1/%{name}.1*
-
-
+%{_libdir}/%{name}
+%{_datadir}/%{name}
 
