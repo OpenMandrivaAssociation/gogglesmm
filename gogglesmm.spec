@@ -3,7 +3,7 @@
 
 Summary:	Goggles Music Manager
 Name:		gogglesmm
-Version:	1.0.7
+Version:	1.0.9
 Release:	1
 Group:		Sound
 License:	GPLv3
