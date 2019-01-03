@@ -50,7 +50,7 @@ song. It supports gapless playback and features easy tag editing.
 %setup -q
 
 %build
-
+%cmake
 %make_build
 
 %install
