@@ -50,7 +50,6 @@ song. It supports gapless playback and features easy tag editing.
 %setup -q
 
 %build
-%configure
 
 %make_build
 
