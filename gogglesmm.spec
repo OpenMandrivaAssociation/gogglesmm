@@ -50,8 +50,8 @@ song. It supports gapless playback and features easy tag editing.
 %setup -q
 
 %build
-%cmake	-DCMAKE_INSTALL_LIBDIR="%{_libdir}" \
-        -DCMAKE_BUILD_TYPE="Release"
+%cmake_qt5	-DCMAKE_INSTALL_LIBDIR="%{_libdir}" \
+                -DCMAKE_BUILD_TYPE="Release"
 %make
 
 %install
