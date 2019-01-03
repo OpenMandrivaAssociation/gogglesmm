@@ -52,10 +52,10 @@ song. It supports gapless playback and features easy tag editing.
 %build
 %cmake	-DCMAKE_INSTALL_LIBDIR="%{_libdir}" \
         -DCMAKE_BUILD_TYPE="Release"
-%make_build
+%make
 
 %install
-%make_install
+%make_install -C build
 
 %find_lang %{name}
 
