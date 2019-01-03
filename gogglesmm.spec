@@ -3,7 +3,7 @@
 
 Summary:	Goggles Music Manager
 Name:		gogglesmm
-Version:	1.0.9
+Version:	1.2.1
 Release:	1
 Group:		Sound
 License:	GPLv3
@@ -50,12 +50,12 @@ song. It supports gapless playback and features easy tag editing.
 %setup -q
 
 %build
-%configure2_5x
+%configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name}
 
