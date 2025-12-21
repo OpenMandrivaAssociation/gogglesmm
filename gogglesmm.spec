@@ -10,6 +10,11 @@ License:	GPLv3
 URL:		https://gogglesmm.github.io/
 Source0:	http://code.google.com/p/gogglesmm/%{name}-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libgcrypt-devel
 BuildRequires:	pkgconfig(libxine)
 BuildRequires:	pkgconfig(dbus-glib-1)
